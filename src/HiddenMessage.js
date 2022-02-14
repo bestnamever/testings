@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function HiddenMessage({ message }) {
+function HiddenMessage({ children }) {
     const [showMessage, setShowMessage] = useState(false);
     return (
         <div>
@@ -11,7 +11,7 @@ function HiddenMessage({ message }) {
                 onChange={(e) => setShowMessage(e.target.checked)}
                 checked={showMessage}
             />
-            {showMessage ? message : null}
+            {showMessage ? children : null}
         </div>
     );
 }
