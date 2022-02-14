@@ -140,6 +140,5 @@
     "presets": [
       "react-app"
     ]
-  },
-  "homepage":"https://bestnamever.github.io/github-actions-demo"
+  }
 }
