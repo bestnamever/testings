@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import './HiddenMessage'
+import HiddenMessage from './HiddenMessage';
 
 function App() {
+  const [content, setContent] = useState('Hello World!');
+  const [testMessage, setMessage] = useState("test message");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div
+      className="app"
+      // 方便测试用例中获取 DOM 节点
+      data-testid="container"
+      onClick={() => {
+
+        if (content === 'Hello World!') {
+          setContent('Hello Jack!');
+          setMessage('test clicked');
+        }
+        else {
+          setContent('Hello World!')
+          setMessage('test message')
+        }
+
+      }}
+    >
+      <div>
+        <HiddenMessage className="hidden" data-testid="hidden_message">{testMessage}</HiddenMessage>
+      </div>
+      {content}
+    </div >
   );
 }
-
 export default App;
