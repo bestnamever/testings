@@ -24,6 +24,7 @@ function App() {
 
       }}
     >
+      <br></br>
       <div>
         <HiddenMessage className="hidden" data-testid="hidden_message">{testMessage}</HiddenMessage>
       </div>
